@@ -1,0 +1,232 @@
+$main-blue: #00aafe;
+$main-brown: #5f5252;
+$main-grey: #8d8989;
+$whitesmoke: whitesmoke;
+
+* {
+  box-sizing: border-box;
+
+  list-style: none;
+}
+
+body {
+  background: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  // font-family: "Exo", sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  nav {
+    height: fit-content;
+
+    flex-direction: column;
+
+    img {
+      margin: 20px 0;
+      width: 120px;
+    }
+
+    ul {
+      left: -100%;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      z-index: 1;
+      transition: all, 0.3s;
+      li {
+        padding: 20px 0;
+        &:hover {
+          color: $main-blue;
+        }
+      }
+
+      a {
+        font-family: "Roboto", sans-serif;
+        padding: 20px 20px;
+        color: $main-brown;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all, 0.3s;
+        &:hover {
+          color: $main-blue;
+        }
+      }
+      .navActive {
+        color: $main-blue;
+      }
+    }
+
+    .checkFont {
+      margin: 30px 10px 0 0;
+      float: right;
+      font-size: 2rem;
+      color: $main-brown;
+      cursor: pointer;
+    }
+
+    #navCheck {
+      display: none;
+
+      &:checked ~ ul {
+        left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    nav {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      img {
+        width: 150px;
+      }
+
+      .checkFont {
+        display: none;
+      }
+      ul {
+        display: unset;
+        left: unset;
+        text-align: left;
+        position: unset;
+        width: unset;
+        height: unset;
+
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    nav {
+      img {
+        width: 200px;
+      }
+
+      ul li {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// header {
+//   position: relative;
+//   .header {
+//     height: 100%;
+//     .logo {
+//       display: flex;
+//       justify-content: center;
+//       margin: 20px;
+//       img {
+//         width: 120px;
+//       }
+
+//       div {
+//         display: none;
+
+//         ul {
+//           list-style: none;
+//           li {
+//             font-size: 1.2rem;
+//             padding: 20px;
+//             display: inline-block;
+//             a {
+//               color: $main-brown;
+//               font-weight: 500;
+//               transition: all, 0.2s;
+//               &:hover {
+//                 color: $main-blue;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   nav {
+//     position: absolute;
+//     margin-left: auto;
+//     margin-right: auto;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     text-align: center;
+//     font-size: 1.3rem;
+//     height: 0;
+//     overflow: hidden;
+//     transition: all, 0.5s;
+//     background-color: $whitesmoke;
+//     color: $main-grey;
+//     ul {
+//       li {
+//         padding: 10px;
+
+//         a {
+//           color: $main-brown;
+//           &:hover {
+//             color: $main-blue;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .navSpan {
+//     position: absolute;
+//     margin: 10px;
+//     right: 0;
+//     top: 0;
+//     font-size: 2rem;
+
+//     &:hover {
+//       cursor: pointer;
+//       color: grey;
+//     }
+
+//     &:active + nav {
+//       height: fit-content;
+
+//       transition: all, 0.5s;
+//     }
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   header {
+//     .header > .logo {
+//       justify-content: space-between;
+//       align-items: center;
+
+//       img {
+//         width: 150px;
+//       }
+//       div {
+//         display: unset;
+//       }
+//     }
+//     .navSpan {
+//       display: none;
+//     }
+//   }
+// }
