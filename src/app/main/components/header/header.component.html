@@ -5,11 +5,39 @@
     <a href=""><img src="../../assets/img/logo.png" alt="logo" /></a>
 
     <ul>
-      <li><a href="/">Home</a></li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="navActive"
+          routerLink="/"
+          >Home</a
+        >
+      </li>
 
-      <li><a href="/">Course</a></li>
-      <li><a href="/">Sign Up</a></li>
-      <li><a href="/">Login</a></li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="navActive"
+          routerLink="category"
+          >Category</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="navActive"
+          routerLink="sign-up"
+          >Sign Up</a
+        >
+      </li>
+      <li>
+        <a
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="navActive"
+          routerLink="login"
+          >Login</a
+        >
+      </li>
     </ul>
   </nav>
 </header>

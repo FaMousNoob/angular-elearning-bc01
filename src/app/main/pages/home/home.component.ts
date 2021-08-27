@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     },
     {
       picture: `../../../../assets/img/mindset.jpg`,
-      title: 'Mindset',
+      title: 'Algorithm',
     },
   ];
 

@@ -266,7 +266,7 @@ ul {
     box-shadow: 0 5px 5px #888888;
     transition: all, 0.3s;
     &:hover {
-      transform: translatey(-10px);
+      transform: scale(1.03) translatey(-5px);
     }
     img {
       width: 100%;
@@ -356,59 +356,6 @@ ul {
       img {
         margin: 20px 0;
       }
-    }
-  }
-}
-
-footer {
-  background: $main-grey;
-  color: $whitesmoke;
-  h3 {
-    font-weight: bold;
-    margin: 0;
-    font-size: 1rem;
-  }
-
-  .footerLocation,
-  .footerLogo {
-    display: flex;
-    align-items: center;
-  }
-
-  .footerLogo {
-    justify-content: space-around;
-
-    img {
-      margin-right: 10px;
-      width: 100px;
-    }
-  }
-  .footerLocation {
-    width: 80%;
-  }
-}
-
-@media (min-width: 768px) {
-  footer {
-    .footerLogo {
-      justify-content: left;
-      img {
-        width: 150px;
-      }
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  footer {
-    .footerLogo {
-      img {
-        width: 200px;
-      }
-    }
-
-    h3 {
-      font-size: 1.3rem;
     }
   }
 }

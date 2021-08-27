@@ -7,7 +7,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { FooterComponent } from './pages/footer/footer.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,10 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    CategoryComponent,
   ],
-  imports: [
-    CommonModule,
-    MainRoutingModule
-  ]
+  imports: [CommonModule, MainRoutingModule],
 })
-export class MainModule { }
+export class MainModule {}

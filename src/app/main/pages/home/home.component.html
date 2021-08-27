@@ -1,138 +1,122 @@
-<section class="container aboutUs">
-  <div class="row">
-    <div class="col-lg-7 aboutUsTitle">
-      <h3>Explore the computer world</h3>
-      <h1>Make coding fun</h1>
+<section>
+  <section class="container aboutUs">
+    <div class="row">
+      <div class="col-lg-7 aboutUsTitle">
+        <h3>Explore the computer world</h3>
+        <h1>Make coding fun</h1>
 
-      <div class="aboutBtnBox">
-        <button class="btn btnAboutSignUp">Sign up</button
-        ><button class="btn btnAboutUs">About us</button>
-      </div>
-    </div>
-
-    <div class="col-lg-5 aboutUsImg">
-      <img src="../../../../assets/img/home1.png" alt="" />
-    </div>
-  </div>
-
-  <div class="aboutUsCategory">
-    <ul>
-      <li>
-        <a href=""
-          ><i class="fas fa-code categoryIcon"></i>
-          <p>FrontEnd</p></a
-        >
-      </li>
-      <li>
-        <a href=""
-          ><i class="fab fa-codepen categoryIcon"></i>
-          <p>Backend</p></a
-        >
-      </li>
-      <li>
-        <a href=""
-          ><i class="fas fa-pencil-ruler categoryIcon"></i>
-          <p>FullStack</p></a
-        >
-      </li>
-      <li>
-        <a href=""
-          ><i class="fas fa-network-wired categoryIcon"></i>
-          <p>More</p></a
-        >
-      </li>
-    </ul>
-
-    <input
-      type="text"
-      class="form-control searchCategory"
-      placeholder="courses"
-    />
-    <a class="searchIcon" href=""><i class="fas fa-search"></i></a>
-  </div>
-</section>
-
-<section class="whyUs">
-  <div class="container">
-    <div class="row text-center text-sm-left whyUsBox">
-      <div class="col-md-7 col-lg-8 whyUsCol">
-        <div class="whyUs-child">
-          <h2>Why us?</h2>
-          <p>First, we invented the best system for learning to code.</p>
-          <p>Ten years and 50 million learners later, we've perfected it.</p>
+        <div class="aboutBtnBox">
+          <button class="btn btnAboutSignUp">Sign up</button
+          ><button class="btn btnAboutUs">About us</button>
         </div>
       </div>
-      <div class="col-md-5 col-lg-4 whyUs-child2">
-        <ul>
-          <li>
-            <p><i class="fas fa-laptop-code"></i>Learning by doing</p>
-          </li>
-          <li>
-            <p><i class="fas fa-users"></i>Huge community</p>
-          </li>
-          <li>
-            <p><i class="fas fa-comment-alt"></i>Get instant feedback</p>
-          </li>
-        </ul>
+
+      <div class="col-lg-5 aboutUsImg">
+        <img src="../../../../assets/img/home1.png" alt="" />
       </div>
     </div>
-  </div>
-</section>
 
-<section class="category container text-center">
-  <h2>Categories</h2>
-  <div class="row">
-    <div class="col-6 col-sm-4" *ngFor="let category of categoriesRender">
-      <a href="">
-        <div
-          class="categoryBox"
-          style="
+    <div class="aboutUsCategory">
+      <ul>
+        <li>
+          <a href=""
+            ><i class="fas fa-code categoryIcon"></i>
+            <p>FrontEnd</p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fab fa-codepen categoryIcon"></i>
+            <p>Backend</p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fas fa-pencil-ruler categoryIcon"></i>
+            <p>FullStack</p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fas fa-network-wired categoryIcon"></i>
+            <p>More</p></a
+          >
+        </li>
+      </ul>
+
+      <input
+        type="text"
+        class="form-control searchCategory"
+        placeholder="courses"
+      />
+      <a class="searchIcon" href=""><i class="fas fa-search"></i></a>
+    </div>
+  </section>
+
+  <section class="whyUs">
+    <div class="container">
+      <div class="row text-center text-sm-left whyUsBox">
+        <div class="col-md-7 col-lg-8 whyUsCol">
+          <div class="whyUs-child">
+            <h2>Why us?</h2>
+            <p>First, we invented the best system for learning to code.</p>
+            <p>Ten years and 50 million learners later, we've perfected it.</p>
+          </div>
+        </div>
+        <div class="col-md-5 col-lg-4 whyUs-child2">
+          <ul>
+            <li>
+              <p><i class="fas fa-laptop-code"></i>Learning by doing</p>
+            </li>
+            <li>
+              <p><i class="fas fa-users"></i>Huge community</p>
+            </li>
+            <li>
+              <p><i class="fas fa-comment-alt"></i>Get instant feedback</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category container text-center">
+    <h2>Categories</h2>
+    <div class="row">
+      <div class="col-6 col-sm-4" *ngFor="let category of categoriesRender">
+        <a href="">
+          <div
+            class="categoryBox"
+            style="
         background: url('{{ category.picture }}');
          background-size: cover;
          background-repeat: no-repeat;
          background-position: center;"
+          >
+            <p>{{ category.title }}</p>
+          </div></a
         >
-          <p>{{ category.title }}</p>
-        </div></a
-      >
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 contactTitle">
+          <h2>Not sure where to begin?</h2>
+          <p>
+            No need to worry, we will help you make sense of it all. For best
+            advices, do not hesitate to contact
+          </p>
+
+          <pre>Phone     +84 979 243 597</pre>
+          <pre>Email      inside.net@gmail.com</pre>
+        </div>
+        <div class="col-lg-5 contactImg">
+          <img src="../../../../assets/img/home3.jpg" alt="contact" />
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
-
-<section class="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7 contactTitle">
-        <h2>Not sure where to begin?</h2>
-        <p>
-          No need to worry, we will help you make sense of it all. For best
-          advices, do not hesitate to contact
-        </p>
-
-        <pre>Phone     +84 979 243 597</pre>
-        <pre>Email      inside.net@gmail.com</pre>
-      </div>
-      <div class="col-lg-5 contactImg">
-        <img src="../../../../assets/img/home3.jpg" alt="contact" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 footerLogo">
-        <img src="../../../../assets/img/logo.png" alt="" />
-        <h3>Copyright © 2021</h3>
-      </div>
-
-      <div class="col-sm-6 footerLocation">
-        <h3>
-          inside technologies - 9th floor, Bitexco, District 1, Ho Chi Minh
-          City, Viet Nam
-        </h3>
-      </div>
-    </div>
-  </div>
-</footer>
