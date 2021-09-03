@@ -12,4 +12,18 @@ export class CourseService {
       .get(`https://60bd865bace4d50017aab194.mockapi.io/DanhMucKhoaHoc`)
       .pipe(catchError((err) => err));
   }
+
+  getListCourseByCategory(codeCategory: string) {
+    return this.httpClient
+      .get(
+        `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${codeCategory}&MaNhom=GP12`
+      )
+      .pipe(catchError((err) => err));
+  }
+
+  getCourseDetail(codeCourse: string) {
+    return this.httpClient.get(
+      `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${codeCourse}`
+    );
+  }
 }

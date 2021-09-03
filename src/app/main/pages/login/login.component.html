@@ -1,1 +1,35 @@
-<p>login works!</p>
+<section class="container login">
+  <div class="row loginContainer">
+    <div
+      class="col-md-6 loginPic"
+      style="
+        background: url(../../../../assets/img/login.jpg) center center / cover
+          no-repeat;
+      "
+    ></div>
+    <div class="col-md-6 loginForm">
+      <div class="loginTitle"><h2>Welcome</h2></div>
+
+      <form>
+        <label for="user">User</label>
+        <div class="inputUserBox">
+          <input required type="text" class="inputUser" id="user" /><i
+            class="fas fa-user"
+          ></i>
+        </div>
+
+        <label for="password">Password</label>
+        <div class="inputPassBox">
+          <input required type="password" id="password" class="inputPass" /><i
+            class="fas fa-lock"
+          ></i>
+        </div>
+
+        <button class="loginBtn" type="submit">Sign In</button>
+        <p>
+          Not registered yet? <a routerLink="/sign-up">Create an Account</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+$main-blue: #00aafe;
+$main-brown: #5f5252;
+$whitesmoke: whitesmoke;
+$main-grey: #8d8989;
+
+.--active {
+  color: $main-blue;
+}
+
+ul {
+  list-style: none;
+  li {
+    display: inline-block;
+    padding: 20px;
+  }
+}

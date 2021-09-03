@@ -82,22 +82,35 @@
 
   <section class="category container text-center">
     <h2>Categories</h2>
-    <div class="row">
-      <div class="col-6 col-sm-4" *ngFor="let category of categoriesRender">
-        <a href="">
-          <div
-            class="categoryBox"
-            style="
-        background: url('{{ category.picture }}');
-         background-size: cover;
-         background-repeat: no-repeat;
-         background-position: center;"
+    <div *ngIf="categoryList; else replaceTemplate">
+      <div class="row">
+        <div class="col-6 col-sm-4" *ngFor="let category of categoryList">
+          <a href="">
+            <div
+              class="categoryBox"
+              style="
+        background: url('{{ category.hinhAnhDanhMuc }}') no-repeat center;
+        background-size: cover;"
+            >
+              <p>{{ category.tenDanhMuc }}</p>
+            </div></a
           >
-            <p>{{ category.title }}</p>
-          </div></a
-        >
+        </div>
       </div>
     </div>
+    <ng-template #replaceTemplate>
+      <div class="row">
+        <div class="col-6 col-sm-4" *ngFor="let category of categoriesRender">
+          <div
+            class="categoryBox skeleton"
+            style="
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            "
+          ></div>
+        </div></div
+    ></ng-template>
   </section>
 
   <section class="contact">

@@ -1,12 +1,15 @@
 <header class="container-md">
   <nav>
-    <input type="checkbox" id="navCheck" />
-    <label for="navCheck" class="checkFont"><i class="fas fa-bars"></i></label>
+    <!-- <input type="checkbox" id="navCheck" /> -->
+    <label for="navCheck" class="checkFont" (click)="status = !status"
+      ><i class="fas fa-bars"></i
+    ></label>
     <a href=""><img src="../../assets/img/logo.png" alt="logo" /></a>
 
-    <ul>
+    <ul [ngClass]="status ? 'showUl' : 'hideUl'">
       <li>
         <a
+          (click)="status = !status"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="navActive"
           routerLink="/"
@@ -16,6 +19,7 @@
 
       <li>
         <a
+          (click)="status = !status"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="navActive"
           routerLink="category"
@@ -24,6 +28,7 @@
       </li>
       <li>
         <a
+          (click)="status = !status"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="navActive"
           routerLink="sign-up"
@@ -32,6 +37,7 @@
       </li>
       <li>
         <a
+          (click)="status = !status"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="navActive"
           routerLink="login"

@@ -1,58 +1,84 @@
 $main-blue: #00aafe;
-$main-brown: #5f5252;
+
 $whitesmoke: whitesmoke;
-$main-grey: #8d8989;
+
+$main-dark-blue: #282a35;
 
 footer {
-  background: $main-grey;
+  background: #282a35;
   color: $whitesmoke;
-  h3 {
-    font-weight: bold;
-    margin: 0;
-    font-size: 1rem;
-  }
+  padding: 30px 0;
 
-  .footerLocation,
   .footerLogo {
     display: flex;
     align-items: center;
-  }
-
-  .footerLogo {
-    justify-content: space-around;
-
+    justify-content: center;
     img {
-      margin: 20px 10px 20px 0;
-
-      width: 100px;
+      width: 120px;
     }
   }
+
   .footerLocation {
-    width: 80%;
+    text-align: center;
+    ul {
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        a {
+          color: $whitesmoke;
+          transition: all, 0.2s;
+          text-decoration: none;
+          &:hover {
+            color: $main-blue;
+          }
+        }
+      }
+    }
+
+    .footerUl1 {
+      margin: 30px;
+
+      li {
+        a {
+          padding: 10px;
+        }
+      }
+    }
+
+    .footerUl2 {
+      li {
+        padding: 10px;
+        a {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    span {
+      text-decoration: underline;
+    }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 786px) {
   footer {
     .footerLogo {
       justify-content: left;
+
       img {
         width: 150px;
       }
     }
-  }
-}
 
-@media (min-width: 992px) {
-  footer {
-    .footerLogo {
-      img {
-        width: 200px;
+    .footerLocation {
+      text-align: right;
+      .footerUl2 {
+        margin-right: 30px;
       }
-    }
-
-    h3 {
-      font-size: 1.3rem;
     }
   }
 }

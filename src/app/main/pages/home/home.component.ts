@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/core/interfaces/course.interface';
+import { CourseService } from 'src/app/core/services/course/course.service';
 
 @Component({
   selector: 'app-home',
@@ -6,34 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  categoriesRender: any[] = [
-    {
-      picture: `../../../../assets/img/frontend.jpg`,
-      title: 'Front end',
-    },
-    {
-      picture: `../../../../assets/img/backend.jpg`,
-      title: 'Back end',
-    },
-    {
-      picture: `../../../../assets/img/fullstack.jpg`,
-      title: 'Fullstack',
-    },
-    {
-      picture: `../../../../assets/img/design.jpg`,
-      title: 'Design',
-    },
-    {
-      picture: `../../../../assets/img/mobile.jpg`,
-      title: 'Mobile',
-    },
-    {
-      picture: `../../../../assets/img/mindset.jpg`,
-      title: 'Algorithm',
-    },
-  ];
+  categoriesRender: any[] = [1, 2, 3, 4, 5, 6];
 
-  constructor() {}
+  categoryList!: Category[];
 
-  ngOnInit(): void {}
+  getListCategory() {
+    this.courseServive.getListCategory().subscribe((data: any) => {
+      this.categoryList = data;
+      console.log('categoryList', this.categoryList);
+    });
+  }
+
+  constructor(private courseServive: CourseService) {}
+
+  ngOnInit(): void {
+    this.getListCategory();
+  }
 }

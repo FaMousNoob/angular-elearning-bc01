@@ -1,0 +1,28 @@
+<div *ngIf="courseDetail" class="courseDetail">
+  <section
+    class="heading"
+    style="
+      background: url(../../../../assets/img/course-detail.jpg) center center /
+        cover no-repeat;
+    "
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 headingTitle">
+          <h4>{{ courseDetail.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</h4>
+          <p>
+            lượt đăng ký: <span>{{ courseDetail.soLuongHocVien }}</span>
+          </p>
+          <div class="btnBox">
+            <button class="btn btn-primary">Đăng Ký</button>
+          </div>
+        </div>
+        <div class="col-md-5"><img [src]="courseDetail.hinhAnh" alt="" /></div>
+      </div>
+    </div>
+  </section>
+  <section class="info container">
+    <h4>{{ courseDetail.tenKhoaHoc }}</h4>
+    <p>{{ courseDetail.moTa }}</p>
+  </section>
+</div>

@@ -1,5 +1,16 @@
-<p>category works!</p>
+<div class="container">
+  <ul>
+    <li *ngFor="let category of listCategory">
+      <p
+        [ngClass]="{
+          '--active': categorySeleted!.maDanhMuc === category.maDanhMuc
+        }"
+        (click)="handleSelectCategory(category)"
+      >
+        {{ category.tenDanhMuc }}
+      </p>
+    </li>
+  </ul>
 
-<div *ngFor="let course of listCategory">
-  <img [src]="course.hinhAnhDanhMuc" alt="" />
+  <app-course-list></app-course-list>
 </div>

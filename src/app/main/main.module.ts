@@ -9,6 +9,9 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { CourseListComponent } from './components/course-list/course-list.component';
+import { CourseDetailComponent } from './pages/course-detail/course-detail.component';
+import { CourseItemComponent } from './components/course-item/course-item.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { CategoryComponent } from './pages/category/category.component';
     HeaderComponent,
     FooterComponent,
     CategoryComponent,
+    CourseListComponent,
+    CourseDetailComponent,
+    CourseItemComponent,
   ],
   imports: [CommonModule, MainRoutingModule],
 })

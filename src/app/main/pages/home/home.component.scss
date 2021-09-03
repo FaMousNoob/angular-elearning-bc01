@@ -1,12 +1,25 @@
 $main-blue: #00aafe;
-$main-brown: #5f5252;
 $whitesmoke: whitesmoke;
-$main-grey: #8d8989;
+$main-dark-blue: #282a35;
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }
 
 .aboutUs {
@@ -18,7 +31,7 @@ ul {
 
     h3 {
       font-weight: normal;
-      color: $main-grey;
+      color: $main-dark-blue;
       font-size: 1.4rem;
     }
     h1 {
@@ -44,13 +57,13 @@ ul {
         color: $whitesmoke;
         transition: all, 0.3s;
         &:hover {
-          background: $main-grey;
+          background: $main-dark-blue;
         }
       }
 
       .btnAboutUs {
         transition: all, 0.3s;
-        color: $main-grey;
+        color: $main-dark-blue;
         &:hover {
           color: $main-blue;
         }
@@ -108,7 +121,7 @@ ul {
     }
     p {
       margin: 0;
-      color: $main-brown;
+      color: $main-dark-blue;
       display: inline-block;
       font-size: 1rem;
     }
@@ -243,7 +256,7 @@ ul {
     font-family: "Exo", sans-serif;
     font-size: 2rem;
     font-weight: 600;
-    color: $main-brown;
+    color: $main-dark-blue;
   }
 
   a {
@@ -254,7 +267,6 @@ ul {
     cursor: pointer;
     color: $whitesmoke;
     font-family: "Exo", sans-serif;
-
     font-weight: bold;
     margin: 20px auto;
     position: relative;
@@ -262,7 +274,6 @@ ul {
     width: 130px;
     border-radius: 30px;
     overflow: hidden;
-    display: block;
     box-shadow: 0 5px 5px #888888;
     transition: all, 0.3s;
     &:hover {
@@ -274,7 +285,6 @@ ul {
 
     p {
       width: 100%;
-      // font-size: 1.5rem;
       position: absolute;
       bottom: 0;
       left: 50%;

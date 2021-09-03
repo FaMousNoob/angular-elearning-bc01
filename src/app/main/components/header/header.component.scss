@@ -1,7 +1,6 @@
 $main-blue: #00aafe;
-$main-brown: #5f5252;
-$main-grey: #8d8989;
 $whitesmoke: whitesmoke;
+$main-dark-blue: #282a35;
 
 * {
   box-sizing: border-box;
@@ -34,8 +33,15 @@ header {
       width: 120px;
     }
 
-    ul {
+    .hideUl {
       left: -100%;
+    }
+
+    .showUl {
+      left: 0;
+    }
+
+    ul {
       text-align: center;
       position: fixed;
       width: 100%;
@@ -43,6 +49,7 @@ header {
       background: white;
       z-index: 1;
       transition: all, 0.3s;
+
       li {
         padding: 20px 0;
       }
@@ -51,7 +58,7 @@ header {
         position: relative;
         font-family: "Roboto", sans-serif;
         padding: 20px 20px;
-        color: $main-brown;
+        color: $main-dark-blue;
         font-weight: 500;
         text-decoration: none;
         text-transform: uppercase;
@@ -88,16 +95,8 @@ header {
       margin: 30px 10px 0 0;
       float: right;
       font-size: 2rem;
-      color: $main-brown;
+      color: $main-dark-blue;
       cursor: pointer;
-    }
-
-    #navCheck {
-      display: none;
-
-      &:checked ~ ul {
-        left: 0;
-      }
     }
   }
 }
