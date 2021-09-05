@@ -12,6 +12,8 @@ import { CategoryComponent } from './pages/category/category.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { CourseDetailComponent } from './pages/course-detail/course-detail.component';
 import { CourseItemComponent } from './components/course-item/course-item.component';
+import { FormsModule } from '@angular/forms';
+import { UserInfoComponent } from './pages/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CourseItemComponent } from './components/course-item/course-item.compon
     CourseListComponent,
     CourseDetailComponent,
     CourseItemComponent,
+    UserInfoComponent,
   ],
-  imports: [CommonModule, MainRoutingModule],
+  imports: [CommonModule, MainRoutingModule, FormsModule],
 })
 export class MainModule {}

@@ -10,22 +10,50 @@
     <div class="col-md-6 loginForm">
       <div class="loginTitle"><h2>Welcome</h2></div>
 
-      <form>
+      <form (ngSubmit)="handleLogin()" #formDN="ngForm">
         <label for="user">User</label>
         <div class="inputUserBox">
-          <input required type="text" class="inputUser" id="user" /><i
-            class="fas fa-user"
-          ></i>
+          <input
+            name="user"
+            [(ngModel)]="userLogin.taiKhoan"
+            #taiKhoan="ngModel"
+            required
+            type="text"
+            class="inputUser"
+            id="user"
+            maxlength="40"
+          /><i class="fas fa-user"></i>
         </div>
 
         <label for="password">Password</label>
         <div class="inputPassBox">
-          <input required type="password" id="password" class="inputPass" /><i
-            class="fas fa-lock"
-          ></i>
+          <input
+            name="password"
+            [(ngModel)]="userLogin.matKhau"
+            #matKhau="ngModel"
+            required
+            type="password"
+            id="password"
+            class="inputPass"
+            maxlength="40"
+          /><i class="fas fa-lock"></i>
         </div>
 
-        <button class="loginBtn" type="submit">Sign In</button>
+        <div
+          *ngIf="
+            (taiKhoan.invalid && (taiKhoan.dirty || taiKhoan.touched)) ||
+            (matKhau.invalid && (matKhau.dirty || matKhau.touched))
+          "
+          class="alert alert-danger rounded-pill text-center"
+        >
+          <div *ngIf="taiKhoan.errors!.required || matKhau.errors!.required">
+            user or password can not be blank
+          </div>
+        </div>
+
+        <button class="loginBtn" type="submit" [disabled]="!formDN.valid">
+          Sign In
+        </button>
         <p>
           Not registered yet? <a routerLink="/sign-up">Create an Account</a>
         </p>

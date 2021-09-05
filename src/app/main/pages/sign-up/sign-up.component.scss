@@ -39,13 +39,6 @@ $main-dark-blue: #282a35;
           outline: none;
         }
       }
-      i {
-        color: $main-blue;
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
     }
 
     .signUpBtn {
@@ -80,6 +73,10 @@ $main-dark-blue: #282a35;
         h2 {
           font-size: 2.5rem;
         }
+      }
+
+      i {
+        font-size: 1.2rem;
       }
 
       .inputPassBox,

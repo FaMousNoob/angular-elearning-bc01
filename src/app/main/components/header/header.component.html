@@ -26,24 +26,57 @@
           >Category</a
         >
       </li>
-      <li>
-        <a
-          (click)="status = !status"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="navActive"
-          routerLink="sign-up"
-          >Sign Up</a
-        >
-      </li>
-      <li>
-        <a
-          (click)="status = !status"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="navActive"
-          routerLink="login"
-          >Login</a
-        >
-      </li>
+      <div class="d-inline" *ngIf="userLogin; else replaceContent">
+        <li>
+          <div class="userHidden">
+            <button class="btn btnUser">
+              <a (click)="userOption = !userOption" class="userName">
+                {{ userLogin.taiKhoan }}</a
+              >
+            </button>
+            <ul [ngClass]="userOption ? 'showUserUl' : 'hideUserUl'">
+              <li *ngIf="adminState">
+                <a routerLink="admin" (click)="userOption = false">admin</a>
+              </li>
+              <li>
+                <a routerLink="user-info" (click)="userOption = false"
+                  >your profile</a
+                >
+              </li>
+              <li>
+                <a (click)="userOption = false" (click)="signOut()">sign Out</a>
+              </li>
+            </ul>
+          </div>
+          <!-- <a
+            (click)="status = !status"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="navActive"
+            routerLink="login"
+            >{{ userLogin.taiKhoan }}</a
+          > -->
+        </li>
+      </div>
+      <ng-template class="d-inline" #replaceContent>
+        <li>
+          <a
+            (click)="status = !status"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="navActive"
+            routerLink="sign-up"
+            >Sign Up</a
+          >
+        </li>
+        <li>
+          <a
+            (click)="status = !status"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="navActive"
+            routerLink="login"
+            >Login</a
+          >
+        </li></ng-template
+      >
     </ul>
   </nav>
 </header>

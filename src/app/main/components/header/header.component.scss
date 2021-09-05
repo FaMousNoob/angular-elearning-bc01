@@ -41,6 +41,13 @@ header {
       left: 0;
     }
 
+    .hideUserUl {
+      display: none;
+    }
+    .showUserUl {
+      display: unset;
+    }
+
     ul {
       text-align: center;
       position: fixed;
@@ -99,6 +106,47 @@ header {
       cursor: pointer;
     }
   }
+
+  .btnUser {
+    width: fit-content;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    padding: 20px 0;
+    color: #282a35;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    box-shadow: none;
+
+    &:hover ~ ul {
+      display: unset;
+    }
+  }
+
+  .userHidden {
+    position: relative;
+    ul {
+      backdrop-filter: blur(10px);
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 100%;
+      border-radius: 0 0 20px 20px;
+      background-color: rgba(245, 245, 245, 0.4);
+
+      &:hover {
+        display: unset;
+      }
+      li {
+        display: flex;
+        justify-content: center;
+      }
+      a {
+        cursor: pointer;
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
@@ -139,7 +187,8 @@ header {
         width: 200px;
       }
 
-      ul li {
+      ul li,
+      .btnUser {
         font-size: 1.2rem;
       }
     }
