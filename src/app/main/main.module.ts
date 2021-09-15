@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,7 +12,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { CourseDetailComponent } from './pages/course-detail/course-detail.component';
 import { CourseItemComponent } from './components/course-item/course-item.component';
 import { FormsModule } from '@angular/forms';
-import { UserInfoComponent } from './pages/user-info/user-info.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,7 @@ import { UserInfoComponent } from './pages/user-info/user-info.component';
     CourseListComponent,
     CourseDetailComponent,
     CourseItemComponent,
-    UserInfoComponent,
+    UserComponent,
   ],
   imports: [CommonModule, MainRoutingModule, FormsModule],
 })

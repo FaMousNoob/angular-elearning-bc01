@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserInfo } from 'src/app/core/interfaces/user.interface';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   status: boolean = false;
-  userOption: boolean = false;
-  userLogin: any = JSON.parse(localStorage.getItem('userLogin')!);
+  userLogin: UserInfo = JSON.parse(localStorage.getItem('userLogin')!);
   adminState: boolean = false;
 
   signOut() {
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   }
 
   checkingAdmin() {
-    if (localStorage.getItem('userLogin')) {
+    if (this.userLogin) {
       if (this.userLogin.maLoaiNguoiDung == 'GV') {
         this.adminState = true;
       }

@@ -1,0 +1,149 @@
+$main-blue: #00aafe;
+$whitesmoke: whitesmoke;
+$main-dark-blue: #282a35;
+
+* {
+  box-sizing: border-box;
+
+  list-style: none;
+}
+
+body {
+  background: whitesmoke;
+  font-family: "Roboto", sans-serif;
+  // font-family: "Exo", sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.mainHeader {
+  nav {
+    height: fit-content;
+
+    flex-direction: column;
+
+    img {
+      margin: 20px 0;
+      width: 120px;
+    }
+
+    .hideUl {
+      left: -100%;
+    }
+
+    .showUl {
+      left: 0;
+    }
+
+    ul {
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      z-index: 1;
+      transition: all, 0.3s;
+
+      li {
+        padding: 20px 0;
+      }
+
+      a {
+        cursor: pointer;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        padding: 20px 20px;
+        color: $main-dark-blue;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all, 0.3s;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%;
+          height: 0;
+          background-color: $main-blue;
+          transition: all, 0.3s;
+          border-radius: 2px;
+        }
+        &:hover {
+          color: $main-blue;
+          &::after {
+            height: 5px;
+          }
+        }
+      }
+      .navActive {
+        color: $main-blue;
+        &::after {
+          height: 5px;
+        }
+      }
+    }
+
+    .checkFont {
+      margin: 30px 10px 0 0;
+      float: right;
+      font-size: 2rem;
+      color: $main-dark-blue;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .mainHeader {
+    nav {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      img {
+        width: 150px;
+      }
+
+      .checkFont {
+        display: none;
+      }
+      ul {
+        display: unset;
+        left: unset;
+        text-align: left;
+        position: unset;
+        width: unset;
+        height: unset;
+
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .mainHeader {
+    nav {
+      img {
+        width: 200px;
+      }
+
+      ul li,
+      .btnUser {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

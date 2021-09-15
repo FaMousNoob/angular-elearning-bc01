@@ -1,6 +1,5 @@
-<header class="container-md">
+<header class="container-md mainHeader">
   <nav>
-    <!-- <input type="checkbox" id="navCheck" /> -->
     <label for="navCheck" class="checkFont" (click)="status = !status"
       ><i class="fas fa-bars"></i
     ></label>
@@ -27,34 +26,21 @@
         >
       </li>
       <div class="d-inline" *ngIf="userLogin; else replaceContent">
+        <li *ngIf="adminState; else replaceUser">
+          <a (click)="status = !status" routerLink="admin">
+            {{ userLogin.taiKhoan }}</a
+          >
+        </li>
+        <ng-template #replaceUser>
+          <li>
+            <a (click)="status = !status" routerLink="user">
+              {{ userLogin.taiKhoan }}</a
+            >
+          </li>
+        </ng-template>
+
         <li>
-          <div class="userHidden">
-            <button class="btn btnUser">
-              <a (click)="userOption = !userOption" class="userName">
-                {{ userLogin.taiKhoan }}</a
-              >
-            </button>
-            <ul [ngClass]="userOption ? 'showUserUl' : 'hideUserUl'">
-              <li *ngIf="adminState">
-                <a routerLink="admin" (click)="userOption = false">admin</a>
-              </li>
-              <li>
-                <a routerLink="user-info" (click)="userOption = false"
-                  >your profile</a
-                >
-              </li>
-              <li>
-                <a (click)="userOption = false" (click)="signOut()">sign Out</a>
-              </li>
-            </ul>
-          </div>
-          <!-- <a
-            (click)="status = !status"
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="navActive"
-            routerLink="login"
-            >{{ userLogin.taiKhoan }}</a
-          > -->
+          <a (click)="signOut()">sign Out</a>
         </li>
       </div>
       <ng-template class="d-inline" #replaceContent>
