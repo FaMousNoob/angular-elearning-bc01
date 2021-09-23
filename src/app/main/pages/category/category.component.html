@@ -1,16 +1,25 @@
 <div class="container">
-  <ul>
-    <li *ngFor="let category of listCategory">
-      <p
-        [ngClass]="{
-          '--active': categorySeleted!.maDanhMuc === category.maDanhMuc
-        }"
-        (click)="handleSelectCategory(category)"
-      >
-        {{ category.tenDanhMuc }}
-      </p>
-    </li>
-  </ul>
+  <div class="selectingCategory">
+    <div *ngIf="listCategory; else replaceCategory" class="row">
+      <div class="col-4 col-sm" *ngFor="let category of listCategory">
+        <p
+          [ngClass]="{
+            '--active': categorySeleted!.maDanhMuc === category.maDanhMuc
+          }"
+          (click)="handleSelectCategory(category)"
+        >
+          {{ category.tenDanhMuc }}
+        </p>
+      </div>
+    </div>
+    <ng-template #replaceCategory>
+      <div class="row">
+        <div class="col-4 col-sm" *ngFor="let category of categoriesRender">
+          <p class="hiddenP skeleton"></p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
 
   <app-course-list></app-course-list>
 </div>

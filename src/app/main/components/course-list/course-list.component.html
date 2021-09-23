@@ -1,7 +1,33 @@
-<section>
-  <div class="row">
-    <div *ngFor="let course of listCourse" class="col-3">
+<section class="courseList">
+  <div class="row" *ngIf="listCourse; else replaceCourse">
+    <div
+      *ngFor="let course of listCourse"
+      class="col-12 col-sm-4 courseListItem"
+    >
       <app-course-item [course]="course"></app-course-item>
     </div>
   </div>
+  <ng-template #replaceCourse>
+    <div class="row">
+      <div
+        *ngFor="let course of courseRender"
+        class="col-12 col-sm-4 courseListItem"
+      >
+        <div class="courseCard">
+          <div class="cardImg skeleton"></div>
+
+          <div class="card-body itemTitle">
+            <div class="cardTitle skeleton"></div>
+            <div class="cardTitle2 skeleton"></div>
+          </div>
+          <div class="preview card-body">
+            <div><i class="fas fa-eye"></i>{{ course.luotXem }}</div>
+            <div>
+              <i class="fas fa-user-friends"></i>{{ course.soLuongHocVien }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </section>

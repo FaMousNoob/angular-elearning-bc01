@@ -1,9 +1,17 @@
-<a routerLink="/course-detail/{{ course.maKhoaHoc }}"
-  ><div class="card text-left">
-    <img class="card-img-top" [src]="course.hinhAnh" alt="" />
-    <div class="card-body">
-      <h4 class="card-title">Title</h4>
-      <p class="card-text">{{ course.tenKhoaHoc }}</p>
-    </div>
+<a routerLink="/course-detail/{{ course.maKhoaHoc }}" class="courseCard">
+  <div
+    class="cardImg"
+    style="
+    background: url('{{ course.hinhAnh }}') no-repeat center;
+    background-size: cover;"
+  ></div>
+
+  <div class="card-body itemTitle">
+    <p class="card-text">{{ course.tenKhoaHoc }}</p>
+    <span>{{ course.nguoiTao.hoTen }}</span>
+  </div>
+  <div class="preview card-body">
+    <div><i class="fas fa-eye"></i>{{ course.luotXem }}</div>
+    <div><i class="fas fa-user-friends"></i>{{ course.soLuongHocVien }}</div>
   </div>
 </a>

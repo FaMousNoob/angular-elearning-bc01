@@ -1,20 +1,45 @@
 $main-blue: #00aafe;
-$main-brown: #5f5252;
 $whitesmoke: whitesmoke;
-$main-grey: #8d8989;
+$main-dark-blue: #282a35;
 
 .--active {
   color: $main-blue;
 }
 
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
 
-  li {
-    display: inline-block;
-    padding: 20px;
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.container {
+  .selectingCategory {
+    background: $main-dark-blue;
+    border-radius: 10px;
+    padding: 15px 0;
+    color: $whitesmoke;
+    p {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      margin: 0;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .hiddenP {
+      width: 40%;
+      height: 1rem;
+      margin: 5px auto;
+    }
   }
 }

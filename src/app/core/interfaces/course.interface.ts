@@ -8,6 +8,11 @@ interface DanhMucKhoaHoc {
   maDanhMucKhoahoc: string;
   tenDanhMucKhoaHoc: string;
 }
+interface nguoiTao {
+  hoTen: string;
+  maLoaiNguoiDung: string;
+  taiKhoan: string;
+}
 
 export interface Course {
   biDanh: string;
@@ -20,4 +25,5 @@ export interface Course {
   ngayTao: string;
   soLuongHocVien: number;
   tenKhoaHoc: string;
+  nguoiTao: nguoiTao;
 }

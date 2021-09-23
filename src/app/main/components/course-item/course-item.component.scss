@@ -1,0 +1,49 @@
+$main-blue: #00aafe;
+$whitesmoke: whitesmoke;
+$main-dark-blue: #282a35;
+
+.courseCard {
+  padding: 10px;
+  text-decoration: none;
+  color: $main-dark-blue;
+  height: fit-content;
+  .cardImg {
+    min-width: 220px;
+    min-height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .itemTitle,
+  .preview {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .itemTitle {
+    min-height: 167px;
+
+    p {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+  .preview {
+    border-top: 1px solid $main-dark-blue;
+    div {
+      margin-right: 20px;
+      display: inline-block;
+      i {
+        margin-right: 5px;
+        font-size: 1.2rem;
+        color: $main-blue;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .courseCard {
+    .cardImg {
+      min-height: 180px;
+    }
+  }
+}

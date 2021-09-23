@@ -14,6 +14,8 @@ export class CategoryComponent implements OnInit {
     private shareCategoryService: ShareCategoryService
   ) {}
 
+  categoriesRender: any[] = [1, 2, 3, 4, 5, 6];
+
   listCategory!: Category[];
   categorySeleted: Category = {
     maDanhMuc: 'BackEnd',
